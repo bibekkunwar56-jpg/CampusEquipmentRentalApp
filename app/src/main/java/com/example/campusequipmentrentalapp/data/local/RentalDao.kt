@@ -9,18 +9,16 @@ interface RentalDao {
 
     /** 대여 신청 저장 **/
     @Insert
-    fun insert(rentalEntity: RentalEntity): Long
+    suspend  fun insert(rentalEntity: RentalEntity): Long
 
     /** 모든 대여 신청 조회
      * */
     @Query("SELECT * FROM rentals ORDER BY id DESC")
-    fun getAll(): List<RentalEntity>
+    suspend  fun getAll(): List<RentalEntity>
 
 
     /** 특정 사용자의 대여 신청 조회 **/
     @Query("SELECT * FROM rentals WHERE userId = :userId ORDER BY id DESC")
-    fun getByUserId(userId: Int): List<RentalEntity>
-
-
+    suspend   fun getByUserId(userId: String): List<RentalEntity>
 
 }
