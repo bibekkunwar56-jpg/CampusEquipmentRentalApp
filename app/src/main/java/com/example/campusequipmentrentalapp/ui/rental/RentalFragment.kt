@@ -144,6 +144,18 @@ class RentalFragment : Fragment(R.layout.fragment_rental) {
                         "DB 저장 완료 : 신청번호 $resultNum",
                         Toast.LENGTH_SHORT
                     ).show()
+                    val bundle = Bundle().apply {
+                        putInt(NavKeys.EQUIPMENT_ID, equipment.id)
+                        putString(NavKeys.APPLICANT_NAME, applicantName)
+                        putString(NavKeys.USER_LOGIN_ID, studentId)
+                        putString(NavKeys.PURPOSE, purpose)
+                        putInt(NavKeys.RENTAL_DAYS, rentalDays)
+                    }
+
+                    findNavController().navigate(
+                        R.id.action_rentalFragment_to_completeFragment,
+                        bundle
+                    )
                 }
 
 
@@ -151,18 +163,7 @@ class RentalFragment : Fragment(R.layout.fragment_rental) {
 
 
 
-            val bundle = Bundle().apply {
-                putInt(NavKeys.EQUIPMENT_ID, equipment.id)
-                putString(NavKeys.APPLICANT_NAME, applicantName)
-                putString(NavKeys.USER_LOGIN_ID, studentId)
-                putString(NavKeys.PURPOSE, purpose)
-                putInt(NavKeys.RENTAL_DAYS, rentalDays)
-            }
 
-            findNavController().navigate(
-                R.id.action_rentalFragment_to_completeFragment,
-                bundle
-            )
         }
 
         binding.btnBackRental.setOnClickListener {
