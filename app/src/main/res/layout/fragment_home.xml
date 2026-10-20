@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
-                android:text="@string/home_title"
+                android:text="2025621097 Bibek Kunwar Campus Equipment Rental"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
