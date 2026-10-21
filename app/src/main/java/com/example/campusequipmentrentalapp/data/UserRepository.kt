@@ -1,6 +1,5 @@
 package com.example.campusequipmentrentalapp.data
 
-//import com.example.campusequipmentrentalapp.data.EquipmentRepository.equipmentList
 import com.example.campusequipmentrentalapp.model.*
 
 class UserRepository {
@@ -27,10 +26,17 @@ class UserRepository {
             "20260011",
             "홍길동",
             "컴퓨터소프트웨어학과",
+            UserRole.STUDENT),
+
+        User(5,
+            "2025621097",
+            "Kunwar Bibek",
+            "컴퓨터소프트웨어학과",
             UserRole.STUDENT)
 
     )
 
-    fun findByLoginId(id:String) : User ?= userList.find{ user -> user.loginId == id}
+
+    fun findByLoginId(id:String) : User? = userList.find{ user -> user.userId == id}
 
 }

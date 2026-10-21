@@ -1,7 +1,6 @@
 package com.example.campusequipmentrentalapp.model
 
 data class User (
-
     val id: Int,
     val userId: String,
     val name: String,
@@ -10,9 +9,7 @@ data class User (
 )
 
 enum class UserRole( val label:String){
-
      STUDENT("학생"),
      PROFESSOR("교수"),
      ASSISTANT("조교")
-
 }
