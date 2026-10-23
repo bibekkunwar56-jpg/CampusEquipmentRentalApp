@@ -16,6 +16,6 @@ interface UserDao {
     suspend fun getUsersAll(): List<UserEntity>
 
     /** 사용자 아이디로 사용자 조회 */
-    @Query("SELECT * FROM users WHERE userId = :userId LIMIT 1")
-    suspend fun getUserId(userId: String): UserEntity?
+    @Query("SELECT * FROM users WHERE loginId = :loginId LIMIT 1")
+    suspend fun getUserId(loginId: String): UserEntity?
 }
